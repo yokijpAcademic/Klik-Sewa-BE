@@ -60,6 +60,9 @@ dependencies {
     testImplementation("io.mockk:mockk:1.13.13")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.0.21")
 
+    // Dot Env
+    implementation("io.github.cdimascio:java-dotenv:5.2.2")
+
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)

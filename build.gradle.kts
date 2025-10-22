@@ -8,7 +8,7 @@ group = "com.gity"
 version = "0.0.1"
 
 application {
-    mainClass = "io.ktor.server.netty.EngineMain"
+    mainClass = "com.gity.Application"
 }
 
 ktor {

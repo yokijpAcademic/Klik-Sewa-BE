@@ -2,8 +2,8 @@ package com.gity.di
 
 import com.gity.config.AppConfig
 import com.gity.config.ConfigLoader
-import com.gity.config.DatabaseConfig
-import com.gity.config.RedisConfig
+import com.gity.config.DatabaseClient
+import com.gity.config.RedisClient
 import com.gity.shared.utils.HashingUtil
 import com.gity.shared.utils.JwtUtil
 import com.gity.shared.utils.EmailUtil
@@ -47,17 +47,17 @@ val configModule = module {
 }
 
 val databaseModule = module {
-    single { DatabaseConfig(get()) }
+    single { DatabaseClient(get()) }
 }
 
 val redisModule = module {
-    //single { RedisConfig(get()) }
+    single { RedisClient(get()) }
 }
 
 val sharedUtilModule = module {
     single { HashingUtil() }
     single { JwtUtil(get()) }
-    //single { EmailUtil(get()) }
+    single { EmailUtil(get()) }
 }
 
 // Uncomment dan sesuaikan setelah implementasi repository & service

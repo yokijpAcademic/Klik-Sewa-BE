@@ -24,6 +24,7 @@ fun Application.module() {
     configureHTTP()
 
     // 3. Install Modules (Routes) - Akan diimplementasi nanti
+    // Uncomment setelah implementasi
     // configureAuthModule()
     // configureListingModule()
     // configureCategoryModule()

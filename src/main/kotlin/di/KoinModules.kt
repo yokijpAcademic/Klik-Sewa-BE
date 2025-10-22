@@ -1,13 +1,5 @@
 package com.gity.di
 
-import com.gity.config.AppConfig
-import com.gity.config.ConfigLoader
-import com.gity.config.DatabaseClient
-import com.gity.config.RedisClient
-import com.gity.shared.utils.HashingUtil
-import com.gity.shared.utils.JwtUtil
-import com.gity.shared.utils.EmailUtil
-
 // Import dari masing-masing fitur (akan diimplementasi nanti)
 // import com.gity.features.auth.repositories.UserRepository
 // import com.gity.features.auth.services.AuthService
@@ -17,6 +9,12 @@ import com.gity.shared.utils.EmailUtil
 // import com.gity.features.category.services.CategoryService
 // import com.gity.features.admin.services.AdminService
 
+import com.gity.config.ConfigLoader
+import com.gity.config.DatabaseClient
+import com.gity.config.RedisClient
+import com.gity.shared.utils.EmailUtil
+import com.gity.shared.utils.HashingUtil
+import com.gity.shared.utils.JwtUtil
 import io.ktor.server.application.*
 import org.koin.dsl.module
 import org.koin.ktor.plugin.Koin

@@ -8,7 +8,7 @@ group = "com.gity"
 version = "0.0.1"
 
 application {
-    mainClass = "com.gity.Application"
+    mainClass = "com.gity.ApplicationKt"
 }
 
 ktor {
@@ -25,6 +25,10 @@ dependencies {
     implementation("io.ktor:ktor-server-call-logging-jvm:3.0.1")
     implementation("io.ktor:ktor-server-status-pages-jvm:3.0.1")
     implementation("io.ktor:ktor-server-rate-limit:3.0.1")
+
+    // OpenAPI/Swagger Documentation
+    implementation("io.ktor:ktor-server-swagger-jvm:3.0.1")
+    implementation("io.ktor:ktor-server-openapi:3.0.1")
 
     // MongoDB Official Kotlin Driver (Mengganti KMongo)
     implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.2.1")
@@ -47,8 +51,8 @@ dependencies {
     implementation("io.konform:konform-jvm:0.6.1")
 
     // Dependency Injection
-    implementation("io.insert-koin:koin-ktor:4.0.0")
-    implementation("io.insert-koin:koin-logger-slf4j:4.0.0")
+    implementation("io.insert-koin:koin-ktor:4.1.1")
+    implementation("io.insert-koin:koin-logger-slf4j:4.1.1")
 
     // Logging
     implementation("ch.qos.logback:logback-classic:1.5.12")

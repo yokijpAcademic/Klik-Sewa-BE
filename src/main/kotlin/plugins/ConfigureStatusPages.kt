@@ -21,7 +21,7 @@ fun Application.configureStatusPages() {
                 status,
                 ErrorResponse(
                     message = "Resource not found",
-                    error = "The requested resource does not exist"
+                    error = "The requested resource does not exist wkwk"
                 )
             )
         }
@@ -55,7 +55,7 @@ fun Application.configureStatusPages() {
                 HttpStatusCode.InternalServerError,
                 ErrorResponse(
                     message = "Internal server error",
-                    error = if (call.application.environment.developmentMode) {
+                    error = if (System.getProperty("ktor.development") == "true") {
                         cause.message
                     } else {
                         "Something went wrong"

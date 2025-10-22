@@ -12,6 +12,8 @@ package com.gity.di
 import com.gity.config.ConfigLoader
 import com.gity.config.DatabaseClient
 import com.gity.config.RedisClient
+import com.gity.features.auth.repositories.UserRepository
+import com.gity.features.auth.services.AuthService
 import com.gity.shared.utils.EmailUtil
 import com.gity.shared.utils.HashingUtil
 import com.gity.shared.utils.JwtUtil
@@ -27,12 +29,12 @@ fun koinModules(app: Application) {
             configModule,
             databaseModule,
             redisModule,
-            sharedUtilModule
+            sharedUtilModule,
+            userRepositoryModule,
+            authServiceModule
             // Uncomment setelah implementasi
-            // userRepositoryModule,
             // listingRepositoryModule,
             // categoryRepositoryModule,
-            // authServiceModule,
             // listingServiceModule,
             // categoryServiceModule,
             // adminServiceModule
@@ -58,22 +60,22 @@ val sharedUtilModule = module {
     single { EmailUtil(get()) }
 }
 
-// Uncomment dan sesuaikan setelah implementasi repository & service
-/*
 val userRepositoryModule = module {
     single { UserRepository(get()) }
 }
 
+val authServiceModule = module {
+    single { AuthService(get(), get(), get(), get(), get()) }
+}
+
+// Uncomment dan sesuaikan setelah implementasi repository & service
+/*
 val listingRepositoryModule = module {
     single { ListingRepository(get()) }
 }
 
 val categoryRepositoryModule = module {
     single { CategoryRepository(get()) }
-}
-
-val authServiceModule = module {
-    single { AuthService(get(), get(), get(), get()) }
 }
 
 val listingServiceModule = module {

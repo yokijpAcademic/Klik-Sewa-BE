@@ -9,7 +9,25 @@ data class CommonResponse<T> (
     val success: Boolean,
     val message: String,
     val data: T? = null
-)
+) {
+    companion object {
+        fun <T> success(data: T, message: String = "Success"): CommonResponse<T> {
+            return CommonResponse(
+                success = true,
+                message = message,
+                data = data
+            )
+        }
+
+        fun <T> error(message: String): CommonResponse<T> {
+            return CommonResponse(
+                success = false,
+                message = message,
+                data = null
+            )
+        }
+    }
+}
 
 @Serializable
 data class PaginatedResponse<T> (
